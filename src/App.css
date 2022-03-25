@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -14,18 +16,27 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 26.8%;
+  background-color: #f3f3f3;
+  background-image: url(./pokerlogo.png);
+  background-repeat: no-repeat;
+  min-height: 20vh;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Link-box {
+  text-align: center;
+}
+
+.Link-box-link {
+  display: inline-block;
+  margin-left: 15px;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +46,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Poker-list {
+}
+
+.Poker-item {
+  background-color: "white";
+  width: "50px";
+  margin-bottom: "10px";
+  padding: "10px";
+  color: "green";
+  box-shadow: "rgb(0,0,0,0.44) 0px 5px 5px";
 }

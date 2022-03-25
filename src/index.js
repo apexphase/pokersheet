@@ -1,14 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import List from "./List";
+import Payouts from "./Payouts";
+import Pokerstars from "./Pokerstars";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/list" element={<List />} />
+          <Route path="/payouts" element={<Payouts />} />
+          <Route path="/pokerstars" element={<Pokerstars />} />
+        </Route>
+      </Routes>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
