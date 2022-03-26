@@ -1,7 +1,8 @@
 .App {
-  text-align: center;
+  /* text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  max-width: auto;
 }
 
 .App-logo {
@@ -19,11 +20,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 26.8%;
-  background-color: #f3f3f3;
-  background-image: url(./pokerlogo.png);
-  background-repeat: no-repeat;
-  min-height: 20vh;
+  max-height: 25vh;
+  margin: auto;
 }
 
 .App-link {
@@ -31,7 +29,8 @@
 }
 
 .Link-box {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .Link-box-link {

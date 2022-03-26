@@ -7,15 +7,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import List from "./List";
 import Payouts from "./Payouts";
 import Pokerstars from "./Pokerstars";
+import Login from "./Login";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/list" element={<List />} />
+          <Route path="/" element={<List />} />
           <Route path="/payouts" element={<Payouts />} />
           <Route path="/pokerstars" element={<Pokerstars />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
     </Router>

@@ -1,25 +1,38 @@
 import "./App.css";
 import { Link, Outlet } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Breadcrumb, Container, Image } from "react-bootstrap";
+import Logo from "./pokerlogo.png";
+import SignedInContext from "./SignedInContext";
 
 function App() {
+  let SignInLink = "Sign In";
+  if (SignedInContext === "false") {
+    SignInLink = "Sign In";
+  } else {
+    SignInLink = "Sign Out";
+  }
   return (
-    <div className="App">
-      <Link to="/">
-        <div className="App-header"></div>
-      </Link>
-      <nav className="Link-box">
-        <Link to="/list" className="Link-box-link">
-          The List
-        </Link>
-        <Link to="/payouts" className="Link-box-link">
-          Payout Structure
-        </Link>
-        <Link to="/pokerstars" className="Link-box-link">
-          Pokerstars Information
-        </Link>
-      </nav>
-      <Outlet />
-    </div>
+    <SignedInContext.Provider value={SignInLink}>
+      <Container sm>
+        <Image className="App-header" src={Logo} />
+        <Breadcrumb md="auto" className="Link-box">
+          <Breadcrumb.Item>
+            <Link to="/">The List</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to="/payouts">Payout Structure</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to="/list">Pokerstars Information</Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item>
+            <Link to="/login">{SignInLink}</Link>
+          </Breadcrumb.Item>
+        </Breadcrumb>
+        <Outlet />
+      </Container>
+    </SignedInContext.Provider>
   );
 }
 
