@@ -4,16 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Breadcrumb, Container, Image } from "react-bootstrap";
 import Logo from "./pokerlogo.png";
 import SignedInContext from "./SignedInContext";
+import Login from "./Login";
 
 function App() {
-  let SignInLink = "Sign In";
-  if (SignedInContext === "false") {
+  var SignInLink = "Sign In";
+  if (SignedInContext._currentValue === "false") {
     SignInLink = "Sign In";
   } else {
     SignInLink = "Sign Out";
   }
   return (
-    <SignedInContext.Provider value={SignInLink}>
+    <SignedInContext.Provider value="false">
       <Container sm>
         <Image className="App-header" src={Logo} />
         <Breadcrumb md="auto" className="Link-box">
@@ -27,7 +28,7 @@ function App() {
             <Link to="/list">Pokerstars Information</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/login">{SignInLink}</Link>
+            <div onClick={Login()}>{SignInLink}</div>
           </Breadcrumb.Item>
         </Breadcrumb>
         <Outlet />
